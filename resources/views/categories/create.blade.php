@@ -1,7 +1,7 @@
 
 @extends('layouts.app')
-
 @section('content')
+
 <div class="container margin-all">
     <h2 class="text-center mt-3"> Add New Category </h2>
     <form action="{{ route('category.store') }}" method="POST">
@@ -16,4 +16,5 @@
         <a href="{{ route('category.index') }}" class="btn btn-primary"> Back </a>
     </form>
 </div>
+
 @endsection

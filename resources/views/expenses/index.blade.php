@@ -1,6 +1,7 @@
 
 @extends('layouts.app')
 @section('content')
+
 <div class="container margin-all">
     <h2 class="text-center mt-4"> Expense List </h2>
     <a href="{{ route('expense.create') }}" class="btn btn-primary my-2"> Add Expense </a>
@@ -43,4 +44,5 @@
         </tbody>
     </table>
 </div>
+
 @endsection

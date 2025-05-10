@@ -1,7 +1,7 @@
 
 @extends('layouts.app')
-
 @section('content')
+
 <div class="container margin-all">
     <h2 class="text-center mt-3"> Add Expense </h2>
     <form action="{{ route('expense.store') }}" method="POST">
@@ -18,9 +18,13 @@
             <label for="category_id" class="form-label"> Category </label>
             <select name="category_id" class="form-control" required>
                 <option value=""> Select Category </option>
-                @foreach ($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                @endforeach
+                @if(isset($categories))
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                @else
+                    <option value=""> No categories available </option>
+                @endif
             </select>
         </div>
         <div class="mb-3">
@@ -30,4 +34,5 @@
         <button type="submit" class="btn btn-primary"> Save Expense </button>
     </form>
 </div>
+
 @endsection
